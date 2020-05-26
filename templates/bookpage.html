@@ -1,0 +1,75 @@
+{% extends "template.html" %}
+
+{%block title%} Book Page {% endblock%}
+
+{% block head %} {{title }}{% endblock %}
+
+{% block style %}
+    <style>
+        .form-group {
+            width: 30%;
+            margin-left: 20px;
+        }
+        .options {
+            width: 15%;
+        }
+        hr {
+            width: 50%;
+            margin-left: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        form{
+            margin-top: 20px;
+        }
+        button{
+            margin-top: 10px;
+        }
+        h3, h2, h6, h4{
+            margin-left: 20px;
+            margin-top: 10px;
+            
+        }
+        .card{
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+    </style>
+
+{% endblock %}
+
+{% block body %}
+    <h3>By: {{author}}</h3>
+    <h3>Written in {{year}}</h3>
+    <hr>
+    <h4>Average Rating: {{avg_rating}}</h4>
+    <hr>
+    <h2>Leave a Review</h2>
+    <h6> {{message}}</h6>
+    <form action="" method="post">
+        <div class="form-group">
+        <h5>Rating: </h5>
+        <select class="form-control options" name ="rating">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <h5>Review:</h5>
+        <input type="text" name="review" class="form-control">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        
+     </form>
+     <hr>
+     
+     {% for review in reviews %}
+     <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{review.rating}}/5</h5>
+          <p> {{review.review}}</h2>
+        </div>
+      </div>
+     {% endfor %}
+{% endblock %}

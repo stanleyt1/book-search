@@ -1,0 +1,56 @@
+{% extends "template.html" %}
+
+{%block title%} Registration{% endblock%}
+
+{% block head %}Register{% endblock %}
+
+{% block style %}
+    <style>
+        .form-group{
+            width: 30%;
+            margin-left: 20px;
+        }
+        form{
+            margin-top: 50px;
+        }
+        button{
+            margin-top: 10px;
+        }
+        hr {
+            width: 50%;
+            margin-left: 10px;
+            margin-top: 40px;
+        }
+        h2{
+            margin-left: 20px;
+            margin-top: 10px;
+
+        }
+        #login{
+            margin-top: 20px;
+
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <form action="" method="post">
+       <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="first" class="form-control">
+        <label>Last Name</label>
+        <input type="text" name="last" class="form-control">
+        <label>Username</label>
+        <input type="text" name="username" class="form-control">
+        <label>Password</label>
+        <input type="password" name="password" class="form-control">
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+       </div>
+    </form>
+
+    <hr>
+    <h2>Have an Account?</h2>
+    <form action="{{ url_for('login')}}" class="form-group" id="login">
+        <button class="btn btn-primary">Login</button>
+    </form>
+ {% endblock %}
