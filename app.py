@@ -158,3 +158,7 @@ def api(isbn):
         year = year,
         avg_rating = avg_rating,
         isbn = isbn)
+
+
+if __name__ == "__main__":
+    app.run()
