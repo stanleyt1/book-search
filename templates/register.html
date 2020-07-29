@@ -2,55 +2,80 @@
 
 {%block title%} Registration{% endblock%}
 
-{% block head %}Register{% endblock %}
 
 {% block style %}
     <style>
+        body{
+            background-color: #6681d4;
+        }
         .form-group{
-            width: 30%;
-            margin-left: 20px;
+            width: 80%;
+            margin: auto;
+
         }
         form{
             margin-top: 50px;
-        }
-        button{
-            margin-top: 10px;
-        }
-        hr {
-            width: 50%;
-            margin-left: 10px;
-            margin-top: 40px;
-        }
-        h2{
-            margin-left: 20px;
-            margin-top: 10px;
-
         }
         #login{
             margin-top: 20px;
 
         }
+        #register{
+            margin-top: 20px;
+
+        }
+        h2{
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+
+        }
+        hr{
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        h1{
+            text-align: center;
+            padding-top: 40px;
+        }
+        .submit{
+            margin-top: 20px;
+        }
+        .register{
+            margin: auto;
+            width: 40%;
+            background-color: white;
+            border-radius: 20px;
+        }
+        .r{
+            margin-bottom: 50px;
+        }
     </style>
 {% endblock %}
 
 {% block body %}
+<div class="register">
+    <h1>Register</h1>
     <form action="" method="post">
-       <div class="form-group">
-        <label>First Name</label>
-        <input type="text" name="first" class="form-control">
-        <label>Last Name</label>
-        <input type="text" name="last" class="form-control">
-        <label>Username</label>
-        <input type="text" name="username" class="form-control">
-        <label>Password</label>
-        <input type="password" name="password" class="form-control">
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-       </div>
-    </form>
-
-    <hr>
-    <h2>Have an Account?</h2>
-    <form action="{{ url_for('login')}}" class="form-group" id="login">
-        <button class="btn btn-primary">Login</button>
-    </form>
+        <div class="form-group">
+         <label>First Name</label>
+         <input type="text" name="first" class="form-control">
+         <label>Last Name</label>
+         <input type="text" name="last" class="form-control">
+         <label>Username</label>
+         <input type="text" name="username" class="form-control">
+         <label>Password</label>
+         <input type="password" name="password" class="form-control">
+         <button type="submit" class="btn btn-primary submit">Sign Up</button>
+        </div>
+     </form>
+ 
+     <hr>
+     <h2>Have an Account?</h2>
+     <form action="{{ url_for('login')}}" class="form-group" id="login">
+         <button class="btn btn-primary r">Login</button>
+     </form>
+</div>
+  
  {% endblock %}
